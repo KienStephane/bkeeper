@@ -23,6 +23,10 @@
                     <x-nav-link href="{{ route('clients.index') }}" :active="request()->routeIs('clients.*')">
                         {{ __('Clients') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('gants.index') }}" :active="request()->routeIs('gants.*')">
+                        {{ __('Gants') }}
+                    </x-nav-link>
                 </div>
             </div>
 

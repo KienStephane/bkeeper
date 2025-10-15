@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\GantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::get('/listeClient', function () {
     return view('client.listeClient');
 })->name('listeClient');
 
+Route::get('/listeGant', function () {
+    return view('gant.listeGant');
+})->name('listeGant');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -39,4 +44,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
     Route::get('/clients/{id}/edit', [ClientController::class, 'edit'])->name('clients.edit');
     Route::put('/clients/{id}', [ClientController::class, 'update'])->name('clients.update');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/gants', [GantController::class, 'index'])->name('gants.index');
+    Route::get('/gants/create', [GantController::class, 'create'])->name('gants.create');
+    Route::post('/gants', [GantController::class, 'store'])->name('gants.store');
+    Route::get('/gants/{id}/edit', [GantController::class, 'edit'])->name('gants.edit');
+    Route::put('/gants/{id}', [GantController::class, 'update'])->name('gants.update');
 });
