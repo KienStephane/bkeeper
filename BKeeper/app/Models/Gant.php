@@ -9,7 +9,7 @@ class Gant extends Model
 {
     use HasFactory;
 
-    protected $table = 'gant';
+    protected $table = 'gants';
     protected $primaryKey = 'gant_id';
     public $timestamps = false; // si pas de colonnes created_at / updated_at
 

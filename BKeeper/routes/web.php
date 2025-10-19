@@ -20,13 +20,13 @@ Route::get('/', function () {
 //    return view('welcome');  // pour la page par défaut
 })->name('home');
 
-Route::get('/listeClient', function () {
+/*Route::get('/listeClient', function () {
     return view('client.listeClient');
 })->name('listeClient');
 
 Route::get('/listeGant', function () {
     return view('gant.listeGant');
-})->name('listeGant');
+})->name('listeGant');*/
 
 Route::middleware([
     'auth:sanctum',

@@ -9,9 +9,9 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $table = 'client';
+    protected $table = 'clients';
     protected $primaryKey = 'client_id';
-    public $timestamps = false; // si pas de colonnes created_at / updated_at
+    public $timestamps = true; // si pas de colonnes created_at / updated_at
 
     protected $fillable = [
         'client_nom',
